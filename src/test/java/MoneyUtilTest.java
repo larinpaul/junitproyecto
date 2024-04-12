@@ -20,4 +20,16 @@ public class MoneyUtilTest {
         Assert.assertEquals("-$1000.00", money);
     }
 
+    @Test
+    public void negativeEuroMoneyTest() {
+        String money = MoneyUtil.format(-1000.0, "€");
+        Assert.assertEquals("-€1000.00", money);
+    }
+
+    @Test
+    public void euroMoneyTest() {
+        String money = MoneyUtil.format(1000.0, "€");
+        Assert.assertEquals("€1000.00", money);
+    }
+
 }
