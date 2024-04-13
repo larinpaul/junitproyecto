@@ -32,4 +32,15 @@ public class MoneyUtilTest {
         Assert.assertEquals("€1000.00", money);
     }
 
+    @Test
+    public void euroTrueTest() {
+        Assert.assertTrue(true);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void euroMoneyNullExceptionTest() {
+        String money = MoneyUtil.format(-1000.0, null);
+
+    }
+
 }

@@ -3,11 +3,14 @@ import java.math.RoundingMode;
 
 public class MoneyUtil {
 
-    public static String format(double money) {
+    public static String format(double money) throws IllegalAccessException {
         return format(money, "$");
     }
 
-    public static String format(double money, String symbol) {
+    public static String format(double money, String symbol) throws IllegalAccessException {
+        if (symbol == null) {
+            throw new IllegalAccessException();
+        }
         if (money < 0) {
             symbol = "-" + symbol;
             money = money * (-1);
